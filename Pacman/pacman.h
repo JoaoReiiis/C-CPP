@@ -1,15 +1,18 @@
-void liberamapa();
-void lemapa();
-void alocamapa();
+#ifndef _PACMAN_H_
+#define _PACMAN_H_
 
-void move(char direcao);
+#define CIMA 'w'
+#define BAIXO 's'
+#define ESQUERDA 'a'
+#define DIREITA 'd'
+#define BOMBA 'b'
+
 int acabou();
-void imprimemamapa();
+void move(char direcao);
+int ehdirecao(char direcao);
+void fantasmas();
+int direcaofantasma(int xatual, int yatual, int* xdestino, int* ydestino);
+void explodepilula();
+void explodepilula2(int x, int y, int somax, int somay, int qtd);
 
-struct mapa {
-    char** matriz;
-    int linhas;
-    int colunas;
-};
-
-typedef struct mapa MAPA;
+#endif
